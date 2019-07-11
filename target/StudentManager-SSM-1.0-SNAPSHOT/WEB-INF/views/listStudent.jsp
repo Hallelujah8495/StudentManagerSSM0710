@@ -26,9 +26,9 @@
 <body>
 
 <div class="listDIV">
-    <table class="table table-striped table-bordered table-hover table-condensed">
+    <table class="table table-striped table-bordered table-hover table-condensed" border="5" width="80%" align="center">
 
-        <caption>学生列表 - 共${page.total}人</caption>
+        <h1 style="font-family:verdana;font-size:200%;color:green" align="center">学生列表 - 共<p style="color: red">${page.total}人</h1>
         <thead>
         <tr class="success">
             <th>学号</th>
@@ -44,15 +44,18 @@
 
         <tbody>
         <c:forEach items="${students}" var="s" varStatus="status">
-            <tr>
+            <tr align="center">
                 <td>${s.student_id}</td>
                 <td>${s.name}</td>
                 <td>${s.age}</td>
                 <td>${s.sex}</td>
                 <td>${s.birthday}</td>
 
-                <td><a href="/editStudent?id=${s.id}"><span class="glyphicon glyphicon-edit"></span> </a></td>
-                <td><a href="/deleteStudent?id=${s.id}"><span class="glyphicon glyphicon-trash"></span> </a></td>
+                <td><a href="/StudentManagerSSM/Student/editStudent?id=${s.id}"><span class="glyphicon glyphicon-edit">编辑</span> </a></td>
+                <td><a href="/StudentManagerSSM/Student/deleteStudent?id=${s.id}" onclick="javascript:return del();">
+                        <span class="glyphicon glyphicon-trash">删除</span>
+                    </a>
+                </td>
             </tr>
         </c:forEach>
 
@@ -99,7 +102,7 @@
     </ul>
 </nav>
 
-<div class="addDIV">
+<div class="addDIV" align="center">
 
     <div class="panel panel-success">
         <div class="panel-heading">

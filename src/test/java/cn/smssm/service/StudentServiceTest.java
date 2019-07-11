@@ -16,29 +16,39 @@ public class StudentServiceTest {
     @Resource
     private StudentService studentService;
 
+    Student student = new Student();
 
     @Test
     public void getTotal() {
+        int total = studentService.getTotal();
+        System.out.println("getTotal===>>>" + total);
     }
 
     @Test
     public void addStudent() {
-        Student student = new Student();
-        student.setAge(1);
-        student.setBirthday(new Date());
-        student.setName("hahaha3333");
-        student.setSex("male");
-        student.setStudent_id(3);
-        studentService.addStudent(student);
+
+        for(int i = 1; i <= 10; i++){
+            student.setAge(i);
+            student.setBirthday(new Date());
+            student.setName("the No."+ i + " student");
+            student.setSex("male");
+            student.setStudent_id(i);
+            studentService.addStudent(student);
+        }
+
 
     }
 
     @Test
     public void deleteStudent() {
+        studentService.deleteStudent(1);
     }
 
     @Test
     public void updateStudent() {
+        student.setId(1);
+        student.setName("The First Student");
+        studentService.updateStudent(student);
     }
 
     @Test

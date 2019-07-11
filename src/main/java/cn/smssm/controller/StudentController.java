@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Controller
-@RequestMapping("")
+@RequestMapping("Student")
 public class StudentController {
 
     @Autowired

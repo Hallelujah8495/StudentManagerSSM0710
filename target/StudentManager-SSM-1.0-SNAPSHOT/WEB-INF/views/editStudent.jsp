@@ -25,7 +25,7 @@
         </div>
         <div class="panel-body">
 
-            <form method="post" action="/updateStudent" role="form">
+            <form method="post" action="/StudentManagerSSM/Student/updateStudent" role="form">
                 <table class="editTable">
                     <tr>
                         <td>学号：</td>

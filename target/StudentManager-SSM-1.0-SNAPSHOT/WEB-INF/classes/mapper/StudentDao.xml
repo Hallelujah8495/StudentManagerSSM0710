@@ -37,7 +37,7 @@
         <result column="name" property="name"/>
         <result column="age" property="age"/>
         <result column="sex" property="sex"/>
-        <result column="birthday" property="birthday" javaType="java.sql.Date"/>
+        <result column="birthday" property="birthday" javaType="java.util.Date"/>
     </resultMap>
 
     <!-- 查询从start位置开始的count条数据-->
